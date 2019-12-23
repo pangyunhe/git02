@@ -1,0 +1,206 @@
+<?php
+$this->_var['pagecss'][] = $this->_var['TMPL_REAL']."/css/weebox.css";	
+$this->_var['pagecss'][] = $this->_var['TMPL_REAL']."/css/fanweUI.css";	
+$this->_var['pagecss'][] = $this->_var['TMPL_REAL']."/css/style.css";	
+$this->_var['pagecss'][] = $this->_var['TMPL_REAL']."/css/color.css";		
+$this->_var['pagecss'][] = $this->_var['TMPL_REAL']."/css/user_login.css";		
+
+$this->_var['pagejs'][] = $this->_var['TMPL_REAL']."/js/utils/jquery-1.6.2.min.js";
+$this->_var['pagejs'][] = $this->_var['TMPL_REAL']."/js/utils/jquery.bgiframe.js";
+$this->_var['pagejs'][] = $this->_var['TMPL_REAL']."/js/utils/jquery.timer.js";
+$this->_var['pagejs'][] = $this->_var['TMPL_REAL']."/js/utils/jquery.weebox.js";
+$this->_var['pagejs'][] = $this->_var['TMPL_REAL']."/js/utils/jquery.touchwipe.js";
+
+$this->_var['pagejs'][] = $this->_var['TMPL_REAL']."/js/fanwe_utils/fanweUI.js";
+$this->_var['cpagejs'][] = $this->_var['TMPL_REAL']."/js/fanwe_utils/fanweUI.js";
+
+$this->_var['pagejs'][] = $this->_var['TMPL_REAL']."/js/script.js";
+$this->_var['cpagejs'][] = $this->_var['TMPL_REAL']."/js/script.js";
+$this->_var['pagejs'][] = $this->_var['TMPL_REAL']."/js/user_register.js";
+$this->_var['cpagejs'][] = $this->_var['TMPL_REAL']."/js/user_register.js";
+$this->_var['pagejs'][] = $this->_var['TMPL_REAL']."/js/sms_verify.js";
+$this->_var['cpagejs'][] = $this->_var['TMPL_REAL']."/js/sms_verify.js";
+?>
+
+{include file="inc/header_regist.html"}
+
+ <style>
+  .xiyi{height: 30px;line-height: 30px;/*border: 1px solid #ccc;border-radius: 4px;*/margin-top: 10px;}
+  .xiyi ul{}
+  .xiyi ul li{float:left;width:50%;text-align:center;background: #f5f5f5;}
+  .loginWarm {
+    color: #999;
+    font-size: .6rem;
+    margin-top: 0.75rem;
+    line-height: 0.6rem;
+}
+
+.loginWarm a {
+    color: #3d96dd;
+    margin-left: 0.2rem;
+}
+  .layui-m-layercont{overflow: scroll;max-height:400px;padding:10px;}
+  
+  .protocal {
+    display: flex;margin-top: 20px;
+}
+
+.protocal .iconchoice {
+    width: .84rem;
+    height: .84rem;
+    margin-top: -0.06rem
+}
+
+.protocal .iconchoice .iconchoice1 {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: url(http://www.hcn777.com/images/unchecked.png) center no-repeat;
+    background-size: contain
+}
+
+.protocal .iconchoice .iconchoice2 {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: url(http://www.hcn777.com/images/checked.png) center no-repeat;
+    background-size: contain;
+}
+
+.protocal .protocal-info {
+    margin-left: .1rem;
+    font-family: PingFangSC-Regular;
+    font-size: .48rem;
+    color: #999;
+    line-height: .68rem
+}
+
+.protocal .protocal-info a {
+    font-family: PingFangSC-Regular;
+    font-size: .48rem;
+    color: #101010;
+    line-height: .68rem;
+    text-decoration: underline
+}
+
+.protocal .protocal-info span {
+    color: #101010
+}
+ </style>
+<div class="wrap">
+	
+	<div class="content">
+	<div class="comment_list_txt1">
+		
+		 <div class="Contentbox">  
+		 
+			<div id="con_one_2">
+		   	<form action="{url x="index" r="user#doregister"}" id="register_box">
+
+				<div class="inputtxt"> 
+				<div class="inputpc"><i class="iconfont">&#xe61f;</i></div>
+				<div class="input_sr"><input type="text"  placeholder="请输入注册的邮箱" name="email"></div>	 
+				</div>
+				
+				<div class="inputtxt"> 
+				<div class="inputpc"><i class="iconfont">&#xe61d;</i></div>
+				<div class="input_sr"><input type="text"  placeholder="请输入注册用户名" name="user_name"></div>	 
+				</div>
+				
+				<div class="inputtxt"> 
+				<div class="inputpc"><i class="iconfont">&#xe61c;</i></div>
+				<div class="input_sr"><input type="password"  placeholder="请输入登录密码" name="user_pwd"></div>	 
+				</div>
+				
+				<div class="inputtxt"> 
+				<div class="inputpc"><i class="iconfont">&#xe618;</i></div>
+				<div class="input_sr"><input type="password"  placeholder="请再次输入登录密码" name="cfm_user_pwd"></div>	 
+				</div>
+              <script src="//res.layui.com/layui/release/layer/dist/mobile/layer.js?2.x"></script>
+
+        <!--/////////////-->
+         <script src="http://hcn777.com/js/layer.js?2.x"></script>
+         <div class="protocal clearfix">
+        <div class="iconchoice">
+            <a id="tongyi" href="javascript:void(0)" class="iconchoice1"></a>
+
+        </div>
+        <div class="protocal-info">
+            &nbsp;同意<span>《</span><a  id="func7" onclick="func7();">会员章程</a><span>》</span>
+           
+            <span>《</span><a  id="func8" onclick="func8();">好吃妞隐私政策</a><span>》</span>
+        </div>
+    </div>
+   <div class="xiyi">
+          <ul>
+                <!-- class="loginWarm">点击注册,即表示您同意,哈哈哈<a href="javascript:;" class="button" onclick="new Function(demo2a.innerHTML)();">会员章程</a></p>  -->
+                 <!--an id="demo2a"></span>-->
+ <script> 
+
+ function func7() {
+        //自定页
+        layer.open({
+    type: 5
+    ,content: $("#info").html()
+    ,anim: 'up'
+    ,style: 'position:fixed; bottom:0; left:0; width: 100%; height: 400px; padding:10px 0; border:none;'
+
+        });
+    }
+
+  function func8() {
+        //自定页
+        layer.open({
+    type: 5
+    ,content: $("#info2").html()
+    ,anim: 'scale'
+    ,style: 'position:fixed; bottom:0; left:0; width: 100%; height: 400px; padding:10px 0; border:none;'
+
+
+        });
+    }
+
+$("#tongyi").click(function () {
+if ($(this).hasClass("iconchoice1")) {
+$(this).removeClass("iconchoice1")
+$(this).addClass("iconchoice2")
+} else if ($(this).hasClass("iconchoice2")) {
+$(this).removeClass("iconchoice2")
+$(this).addClass("iconchoice1")
+}
+})
+</script>
+
+<div id='info' style = "display : none;padding:10px;">
+  <div style="padding:20px;">
+
+  {function name="app_conf" v="BIZ_AGREEMENT"}
+              </div>
+                </div>
+<div id='info2' style = "display : none;padding:10px;">
+  <div style="padding:20px;">
+
+{function name="app_conf" v="BIZ_AGREEMENT2"}
+
+              </div>
+                </div>
+                
+				<div class="btn_login">
+				<input type="submit" value="立即注册" style="background: none;">
+				</div>
+			</form>
+		   </div>
+			
+		 </div>
+		 
+		</div>  
+		           
+		
+	 </div>
+	 <div class="tr" style="padding:10px;">
+		 <a href="{url x="index" r="user#getpassword"}">找回密码</a>
+	</div>
+	</div>
+</div>
+
+{include file="inc/no_footer.html"}	
